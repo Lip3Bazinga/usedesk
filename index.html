@@ -1245,7 +1245,7 @@
         e oriente seus clientes nos primeiros passos com
         <span class="red_paragraph">Camila Santos</span>.
       </p>
-      <a href="popup" href="#popup">
+      <a href="#popup">
         <span>
           Quero fazer parte
         </span>
@@ -1311,7 +1311,7 @@
 
           <h2>Esse Workshop te ajudará a aprofundar o seu conhecimento sobre cada um desses problemas e como
             contorná-los na sua operação!</h2>
-          <a href="popup">
+          <a href="#popup">
             <span>
               Quero fazer parte
             </span>
@@ -1417,7 +1417,7 @@
           </div><!--content_info-->
         </div><!--card-->
       </div><!--content_cards-->
-      <a href="popup">
+      <a href="#popup">
         <span>QUERO TER RESULTADOS NA MINHA EMPRESA</span>
         <img src="https://raw.githubusercontent.com/Lip3Bazinga/usedesk/main/icon-arrow-left.png" />
         <img src="https://raw.githubusercontent.com/Lip3Bazinga/usedesk/main/icon-arrow-left.png" />
@@ -1445,7 +1445,7 @@
           Percorre o país de motorhome levando o tema da <span>experiência humana</span>
           a lugares inexplorados pelos grandes eventos.
         </p>
-        <a href="popup">
+        <a href="#popup">
           Garantir a vaga agora
         </a>
       </div><!--content_left-->
@@ -1615,7 +1615,7 @@
         Reserve sua vaga agora no
         <span>Client Care Workshop Sessions</span>
       </h2>
-      <a href="popup">
+      <a href="#popup">
         <span>Aplicar agora</span>
         <img src="https://raw.githubusercontent.com/Lip3Bazinga/usedesk/main/icon-arrow-left.png" />
         <img src="https://raw.githubusercontent.com/Lip3Bazinga/usedesk/main/icon-arrow-left.png" />
@@ -1634,14 +1634,15 @@
 
   <script>
 
-    let a = document.querySelectorAll("#popup")
+    let a = document.querySelectorAll("##popup")
     a.forEach(item => {
       item.addEventListener("click", () => {
         alert('Ola')
         hbspt.forms.create({
           region: "na1",
           portalId: "43561633",
-          formId: "cc6d06fd-35ac-4d35-86b6-e9473de82ef8"
+          formId: "cc6d06fd-35ac-4d35-86b6-e9473de82ef8",
+          id="popup"
         });
       })
     })
