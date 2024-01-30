@@ -1692,8 +1692,10 @@
   <script src="script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/43561633.js"></script>
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js" crossorigin="anonymous"></script>
+  
   <script>
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -1706,12 +1708,13 @@
       buttons.forEach(button => {
 
         button.addEventListener("click", (event) => {
-          popup_section.classList.add("active")
           event.preventDefault();
+          popup_section.classList.add("active")
 
           const scriptElement = document.createElement("script");
           scriptElement.src = "https://js.hsforms.net/forms/v2.js";
           scriptElement.async = true;
+          scriptElement.crossorigin = "anonymous"
 
           scriptElement.onload = function () {
             hbspt.forms.create({
