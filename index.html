@@ -24,6 +24,8 @@
   <meta charset="UTF-8" />
 
   <link rel="icon" type="image/png" href="./assets/fav.ico" />
+  <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/Lip3Bazinga/usedesk/main/style.css" />
+
 
   <title>Usedesk</title>
 
@@ -99,9 +101,7 @@
 
     .content {
       width: 100%;
-      /* Alterado para 100% */
       max-width: 128rem;
-      /* Adicionado max-width para limitar a largura em telas muito largas */
       margin: 0 auto;
       display: flex;
       padding-inline: 2rem;
@@ -120,6 +120,56 @@
         transform: translateX(8rem);
       }
     }
+
+    .popup {
+      display: none;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      background: rgba(0, 0, 0, 0.363);
+      transform: translate(-50%, -50%);
+      z-index: 100;
+    }
+
+    .popup.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #popup-content {
+      z-index: 1000;
+    }
+
+    .popup .modal {
+      position: relative;
+      width: 45rem;
+      height: 65rem;
+      padding: 2rem;
+      background: var(--blue);
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .popup.active .modal button {
+      position: absolute;
+      z-index: 1000;
+      right: 1rem;
+      top: 1rem;
+      outline: none;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .popup.active .modal button ion-icon {
+      font-size: 4rem;
+      color: var(--background-opacity);
+    }
+
 
     /* ========== Banner Styles ========== */
 
@@ -178,7 +228,7 @@
       width: 413px;
     }
 
-    .banner1 .content a {
+    .banner1 .content button {
       margin-top: 3rem;
       width: 412.3px;
       height: 82.111px;
@@ -198,19 +248,19 @@
       cursor: pointer;
     }
 
-    .banner1 .content a:hover {
+    .banner1 .content button:hover {
       border-color: var(--background-opacity);
     }
 
-    .banner1 .content a:hover span {
+    .banner1 .content button:hover span {
       animation: animation 1s linear infinite;
     }
 
-    .banner1 .content a img {
+    .banner1 .content button img {
       margin-left: .5rem;
     }
 
-    .banner1 .content a:hover img {
+    .banner1 .content button:hover img {
       animation: animation 1s linear infinite;
     }
 
@@ -340,7 +390,7 @@
       color: var(--white);
     }
 
-    .partners .content .content_info .content_left a {
+    .partners .content .content_info .content_left button {
       margin: 2rem auto;
       width: 23.6rem;
       height: 4.7rem;
@@ -363,28 +413,28 @@
       overflow-x: hidden;
     }
 
-    .partners .content .content_info .content_left a:hover {
+    .partners .content .content_info .content_left button:hover {
       border-color: var(--background-opacity);
     }
 
-    .partners .content .content_info .content_left a:hover span {
+    .partners .content .content_info .content_left button:hover span {
       animation: animation 2s linear infinite;
     }
 
-    .partners .content .content_info .content_left a img {
+    .partners .content .content_info .content_left button img {
       margin-left: .5rem;
     }
 
-    .partners .content .content_info .content_left a:hover img {
+    .partners .content .content_info .content_left button:hover img {
       animation: animation 2s linear infinite;
     }
 
-    .partners .content .content_info .content_left a img {
+    .partners .content .content_info .content_left button img {
       width: 5px;
       height: 16px;
     }
 
-    .partners .content .content_info .content_left a img:nth-child(1) {
+    .partners .content .content_info .content_left button img:nth-child(1) {
       margin-left: 5rem !important;
     }
 
@@ -513,7 +563,7 @@
       font-weight: 300;
     }
 
-    .results .content a {
+    .results .content button {
       margin: 10rem auto;
       margin-inline: auto;
       width: 63.5rem;
@@ -525,23 +575,23 @@
       cursor: pointer;
     }
 
-    .results .content a:hover {
+    .results .content button:hover {
       border-color: var(--background-opacity);
     }
 
-    .results .content a:hover span {
+    .results .content button:hover span {
       letter-spacing: .2rem;
     }
 
-    .results .content a img {
+    .results .content button img {
       margin-left: .5rem;
     }
 
-    .results .content a:hover img {
+    .results .content button:hover img {
       animation: animation 1s linear infinite;
     }
 
-    .results .content a span {
+    .results .content button span {
       text-transform: uppercase;
       color: var(--white);
       text-align: center;
@@ -589,7 +639,7 @@
       font-weight: 600;
     }
 
-    .camila .content .content_left a {
+    .camila .content .content_left button {
       margin-top: 4rem;
       width: 246.85px;
       height: 49.161px;
@@ -606,7 +656,7 @@
       cursor: pointer;
     }
 
-    .camila .content .content_left a:hover {
+    .camila .content .content_left button:hover {
       border-color: var(--red);
       background: var(--blue);
       letter-spacing: .2rem;
@@ -769,7 +819,7 @@
       color: var(--blue);
     }
 
-    .doubts .content.ct_title a {
+    .doubts .content.ct_title button {
       width: 401px;
       height: 127px;
       border-radius: 12px;
@@ -790,23 +840,23 @@
       overflow-x: hidden;
     }
 
-    .doubts .content.ct_title a:hover {
+    .doubts .content.ct_title button:hover {
       border-color: var(--background-opacity);
     }
 
-    .doubts .content.ct_title a:hover span {
+    .doubts .content.ct_title button:hover span {
       animation: animation 1s linear infinite;
     }
 
-    .doubts .content.ct_title a img {
+    .doubts .content.ct_title button img {
       margin-left: .5rem;
     }
 
-    .doubts .content.ct_title a:hover img {
+    .doubts .content.ct_title button:hover img {
       animation: animation 1s linear infinite;
     }
 
-    .doubts .content.ct_title a img:nth-child(1) {
+    .doubts .content.ct_title button img:nth-child(1) {
       margin-left: 2rem;
     }
 
@@ -1075,11 +1125,11 @@
         margin: 0 auto;
       }
 
-      .results .content a {
+      .results .content button {
         width: 40rem;
       }
 
-      .results .content a span {
+      .results .content button span {
         font-size: 2rem !important;
       }
 
@@ -1113,7 +1163,7 @@
         font-size: 1.4rem;
       }
 
-      .banner .content a {
+      .banner .content button {
         width: 100%;
       }
 
@@ -1145,7 +1195,7 @@
         margin-top: 4rem !important;
       }
 
-      .partners .content .content_left a {
+      .partners .content .content_left button {
         width: 100% !important;
         margin: 0 auto !important;
         margin-top: 4rem !important;
@@ -1179,7 +1229,7 @@
         width: 100% !important;
       }
 
-      .camila .content .content_left a {
+      .camila .content .content_left button {
         width: 100%;
       }
 
@@ -1206,7 +1256,7 @@
         justify-content: flex-start;
       }
 
-      .results .content a {
+      .results .content button {
         width: 35rem;
       }
 
@@ -1214,7 +1264,7 @@
         height: 160vh;
       }
 
-      .doubts .content.ct_title a {
+      .doubts .content.ct_title button {
         width: 35rem;
       }
 
@@ -1224,7 +1274,9 @@
 
     }
   </style>
-
+  <script src="https://js.hsforms.net/forms/v2.js" async defer></script>
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/43561633.js"></script>
 </head>
 
 <body>
@@ -1245,13 +1297,13 @@
         e oriente seus clientes nos primeiros passos com
         <span class="red_paragraph">Camila Santos</span>.
       </p>
-      <a href="#popup">
+      <button>
         <span>
           Quero fazer parte
         </span>
         <img src="https://raw.githubusercontent.com/Lip3Bazinga/usedesk/main/icon-arrow-left.png" />
         <img src="https://raw.githubusercontent.com/Lip3Bazinga/usedesk/main/icon-arrow-left.png" />
-      </a>
+      </button>
       <p>
         <span>
           <img src="https://raw.githubusercontent.com/Lip3Bazinga/usedesk/main/icon-calendar.png" />
@@ -1311,13 +1363,13 @@
 
           <h2>Esse Workshop te ajudará a aprofundar o seu conhecimento sobre cada um desses problemas e como
             contorná-los na sua operação!</h2>
-          <a href="#popup">
+          <button>
             <span>
               Quero fazer parte
             </span>
             <img src="https://github.com/Lip3Bazinga/usedesk/blob/main/icon-arrow-left.png" />
             <img src="https://github.com/Lip3Bazinga/usedesk/blob/main/icon-arrow-left.png" />
-          </a>
+          </button>
         </div><!--content_left-->
         <div class="content_right">
           <img src="https://raw.githubusercontent.com/Lip3Bazinga/usedesk/main/image1.png" />
@@ -1417,11 +1469,11 @@
           </div><!--content_info-->
         </div><!--card-->
       </div><!--content_cards-->
-      <a href="#popup">
+      <button>
         <span>QUERO TER RESULTADOS NA MINHA EMPRESA</span>
         <img src="https://raw.githubusercontent.com/Lip3Bazinga/usedesk/main/icon-arrow-left.png" />
         <img src="https://raw.githubusercontent.com/Lip3Bazinga/usedesk/main/icon-arrow-left.png" />
-      </a>
+      </button>
     </div><!--content-->
   </section><!--results-->
 
@@ -1445,9 +1497,9 @@
           Percorre o país de motorhome levando o tema da <span>experiência humana</span>
           a lugares inexplorados pelos grandes eventos.
         </p>
-        <a href="#popup">
+        <button>
           Garantir a vaga agora
-        </a>
+        </button>
       </div><!--content_left-->
       <div class="content_right">
         <img src="https://raw.githubusercontent.com/Lip3Bazinga/usedesk/main/calima.png" />
@@ -1615,11 +1667,11 @@
         Reserve sua vaga agora no
         <span>Client Care Workshop Sessions</span>
       </h2>
-      <a href="#popup">
+      <button>
         <span>Aplicar agora</span>
         <img src="https://raw.githubusercontent.com/Lip3Bazinga/usedesk/main/icon-arrow-left.png" />
         <img src="https://raw.githubusercontent.com/Lip3Bazinga/usedesk/main/icon-arrow-left.png" />
-      </a>
+      </button>
     </div>
   </section><!--doubts-->
 
@@ -1628,24 +1680,59 @@
     <h2>© 2024 | Todos os direitos reservados <span>Usedesk</span></h2>
   </footer>
 
+  <section class="popup">
+    <div class="modal">
+      <button id="close">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <div id="popup-content"></div>
+    </div>
+  </section>
+
   <script src="script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/43561633.js"></script>
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-
+  crossorigin="anonymous"></script>
   <script>
 
-    let a = document.querySelectorAll("##popup")
-    a.forEach(item => {
-      item.addEventListener("click", () => {
-        alert('Ola')
-        hbspt.forms.create({
-          region: "na1",
-          portalId: "43561633",
-          formId: "cc6d06fd-35ac-4d35-86b6-e9473de82ef8",
-          id="popup"
+    document.addEventListener("DOMContentLoaded", function () {
+
+      let closeButton = document.querySelector("#close")
+      let popup_section = document.querySelector(".popup");
+      let popup_content = document.querySelector("#popup-content");
+      let buttons = document.querySelectorAll("button");
+
+      buttons.forEach(button => {
+
+        button.addEventListener("click", (event) => {
+          popup_section.classList.add("active")
+          event.preventDefault();
+
+          const scriptElement = document.createElement("script");
+          scriptElement.src = "https://js.hsforms.net/forms/v2.js";
+          scriptElement.async = true;
+
+          scriptElement.onload = function () {
+            hbspt.forms.create({
+              region: "na1",
+              portalId: "43561633",
+              formId: "cc6d06fd-35ac-4d35-86b6-e9473de82ef8",
+              target: "#popup-content"
+            });
+          };
+
+          popup_content.appendChild(scriptElement);
+
+          closeButton.addEventListener("click", () => {
+            popup_section.classList.remove("active")
+          })
+
         });
-      })
-    })
+      });
+    });
+
 
   </script>
 
