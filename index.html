@@ -1687,57 +1687,11 @@
     </div>
   </section>
 
-  <script src="script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/43561633.js"></script>
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js" crossorigin="anonymous"></script>
   
-  <script>
-
-    alert("Olá mundo!")
-    
-    document.addEventListener("DOMContentLoaded", function () {
-
-      let closeButton = document.querySelector("#close")
-      let popup_section = document.querySelector(".popup");
-      let popup_content = document.querySelector("#popup-content");
-      let buttons = document.querySelectorAll("button");
-
-      buttons.forEach(button => {
-
-        button.addEventListener("click", (event) => {
-          alert("Olá");
-          event.preventDefault();
-          popup_section.classList.add("active")
-
-          const scriptElement = document.createElement("script");
-          scriptElement.src = "https://js.hsforms.net/forms/v2.js";
-          scriptElement.async = true;
-          scriptElement.crossorigin = "anonymous"
-
-          scriptElement.onload = function () {
-            hbspt.forms.create({
-              region: "na1",
-              portalId: "43561633",
-              formId: "cc6d06fd-35ac-4d35-86b6-e9473de82ef8",
-              target: "#popup-content"
-            });
-          };
-
-          popup_content.appendChild(scriptElement);
-
-          closeButton.addEventListener("click", () => {
-            popup_section.classList.remove("active")
-          })
-
-        });
-      });
-    });
-
-  </script>
-
 </body>
 
 </html>
